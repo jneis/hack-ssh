@@ -1,0 +1,20 @@
+version: '2'
+services:
+    remote:
+        build:
+            context: .
+            dockerfile: Dockerfile_remote
+        image: ssh-remote
+        container_name: ssh-remote
+        tty: true
+        stdin_open: true
+    local:
+        build:
+            context: .
+            dockerfile: Dockerfile_local
+        image: ssh-local
+        container_name: ssh-local
+        tty: true
+        stdin_open: true
+        links:
+            - remote
