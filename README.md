@@ -7,16 +7,16 @@ hacking ssh server &amp; clients
 
   `$~> ssh-copy-id remote`
 
-- Disable password authentication on remote machine
+- Disable password authentication on remote machine (for key-based authentication only)
 
    `$~> vim /etc/ssh/sshd_config`
 
-   `
+   ```
    ...
    PermitEmptyPasswords no
    ...
    PasswordAuthentication no
    ...
-   `
+   ```
 
 
