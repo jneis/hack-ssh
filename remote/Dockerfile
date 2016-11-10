@@ -13,9 +13,10 @@ COPY sshd_config /etc/ssh/
 
 RUN echo 'root\nroot' | passwd
 
-RUN service ssh start
+RUN mkdir /var/run/sshd
+
+RUN chmod 0755 /var/run/sshd
 
 EXPOSE 22
 
-CMD bash
-
+CMD /usr/sbin/sshd -D

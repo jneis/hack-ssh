@@ -2,18 +2,18 @@ version: '2'
 services:
     remote:
         build:
-            context: .
-            dockerfile: Dockerfile_remote
-        image: ssh-remote
-        container_name: ssh-remote
+            context: ./remote
+            dockerfile: Dockerfile
+        image: hackssh-remote
+        container_name: remote
         tty: true
         stdin_open: true
     local:
         build:
-            context: .
-            dockerfile: Dockerfile_local
-        image: ssh-local
-        container_name: ssh-local
+            context: ./local
+            dockerfile: Dockerfile
+        image: hackssh-local
+        container_name: local
         tty: true
         stdin_open: true
         links:
